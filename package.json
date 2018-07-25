@@ -1,5 +1,5 @@
 {
-  "name": "svelte-plop",
+  "name": "@ctm/svelte-plop",
   "description": "Generate Svelte components with boilerplate",
   "version": "0.0.1",
   "engines": {
