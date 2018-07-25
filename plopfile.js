@@ -1,5 +1,6 @@
 module.exports = function (plop) {
   const context = process.cwd();
+  const base = context + (process.argv[2] === '--base' ? '/' + process.argv[3] : '/');
 
   plop.setGenerator('component', {
     description: 'Boilerplate for Svelte component',
@@ -18,22 +19,17 @@ module.exports = function (plop) {
       {
         type: 'confirm',
         name: 'ui',
-        message: 'is this for the component library?',
-        default: true
+        message: 'is this a library component?',
+        default: false
       },
       {
         type: 'input',
         name: 'path',
-        message: 'path to generate component',
-        default: 'src',
-        when: (data) => {
-          return !data.ui;
-        }
+        message: `path from ${base} to generate component`
       }
     ],
     actions: (data) => {
-      const path = data.path || 'src';
-      const dest = `${context}/${path}`;
+      let dest = base + data.path || '';
 
       let actions = [
         {
