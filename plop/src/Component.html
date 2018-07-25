@@ -1,0 +1,63 @@
+<div class="{{camelCase name}} {ClassNames}">
+  {componentName}
+</div>
+
+<style>
+  .{{camelCase name}} {
+    border: 1px solid black;
+  }
+</style>
+
+<script>
+  {{#unless minimal}}
+  import classnames from 'classnames';
+  import options from './options';
+
+  export default {
+    components: {
+
+    },
+
+    data() {
+      return {
+        componentName: ''
+      }
+    },
+
+    computed: {
+      ClassNames({ componentName }) {
+        return classnames(componentName);
+      }
+    },
+
+    methods: {
+      exampleMethod() {
+        console.log('exampleMethod');
+      },
+    },
+
+    helpers: {
+      exampleHelper(someArg) {
+        return someArg;
+      }
+    },
+
+    onstate({ changed, previous }) {
+
+    },
+
+    oncreate() {
+      console.log(this.options);
+    },
+
+    ondestroy() {
+      console.log('ondestroy');
+    }
+  }
+
+  function privateFunction(arg) {
+    return arg;
+  }
+
+  {{/unless}}
+</script>

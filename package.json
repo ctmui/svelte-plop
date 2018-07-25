@@ -1,0 +1,11 @@
+{
+  "name": "svelte-plop",
+  "description": "Generate Svelte components with boilerplate",
+  "version": "0.0.1",
+  "bin": {
+    "svelte-plop": "index.js"
+  },
+  "dependencies": {
+    "plop": "^2.0.0"
+  }
+}

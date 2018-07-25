@@ -1,0 +1,23 @@
+<h1>{{titleCase name}}</h1>
+
+<Example
+  component="{ component }"
+  source="{ source }">
+</Example>
+
+<script>
+  import Example from '../../_util/Example.html';
+
+  export default {
+    components: {
+      Example
+    },
+
+    data() {
+      return {
+        component: require('../examples/01-basic{{properCase name}}.html').default,
+        source: require('!!raw-loader!../examples/01-basic{{properCase name}}.html')
+      }
+    }
+  }
+</script>
