@@ -2,10 +2,16 @@
   "name": "svelte-plop",
   "description": "Generate Svelte components with boilerplate",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=8.10.0"
+  },
   "bin": {
     "svelte-plop": "index.js"
   },
   "dependencies": {
     "plop": "^2.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://www.myget.org/F/ctm-ui-components/npm/"
   }
 }
